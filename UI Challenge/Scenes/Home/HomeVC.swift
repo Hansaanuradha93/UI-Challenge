@@ -18,7 +18,7 @@ class HomeVC: UIViewController {
     }
     
     lazy var customNavigationBarView: UCNavigationBarView = {
-        let view = UCNavigationBarView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.navigationBarView.frame.size.height), title: "Sign Up")
+        let view = UCNavigationBarView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.navigationBarView.frame.size.height), title: "Sign Up", delegate: self)
         return view
     }()
     
@@ -28,5 +28,14 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         navigationBarView.addSubview(customNavigationBarView)
+    }
+}
+
+
+// MARK: - NavigationButtonPressedDelegate
+extension HomeVC: NavigationButtonPressedDelegate {
+    
+    func onButtonPress(backPressed: Bool) {
+        print("Back button pressed")
     }
 }
