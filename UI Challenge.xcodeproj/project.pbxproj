@@ -56,15 +56,47 @@
 		47015E8D256B8BDC00870A44 /* UI Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				47015EA7256B8EA600870A44 /* Views */,
+				47015EA6256B8E8D00870A44 /* Scenes */,
+				47015EA4256B8E7500870A44 /* Support Files */,
+			);
+			path = "UI Challenge";
+			sourceTree = "<group>";
+		};
+		47015EA4256B8E7500870A44 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
 				47015E8E256B8BDC00870A44 /* AppDelegate.swift */,
 				47015E90256B8BDC00870A44 /* SceneDelegate.swift */,
-				47015E92256B8BDC00870A44 /* ViewController.swift */,
-				47015E94256B8BDC00870A44 /* Main.storyboard */,
 				47015E97256B8BDD00870A44 /* Assets.xcassets */,
 				47015E99256B8BDD00870A44 /* LaunchScreen.storyboard */,
 				47015E9C256B8BDD00870A44 /* Info.plist */,
 			);
-			path = "UI Challenge";
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		47015EA6256B8E8D00870A44 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				47015EA8256B8EBC00870A44 /* Main */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		47015EA7256B8EA600870A44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		47015EA8256B8EBC00870A44 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				47015E92256B8BDC00870A44 /* ViewController.swift */,
+				47015E94256B8BDC00870A44 /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
