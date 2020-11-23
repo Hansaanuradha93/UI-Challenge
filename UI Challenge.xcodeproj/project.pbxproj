@@ -107,8 +107,8 @@
 		47015EDE256BAE0100870A44 /* Navigation Bar */ = {
 			isa = PBXGroup;
 			children = (
-				47015EE6256BAF0700870A44 /* UCNavigationBarView.xib */,
 				47015EE9256BAF2D00870A44 /* UCNavigationBarView.swift */,
+				47015EE6256BAF0700870A44 /* UCNavigationBarView.xib */,
 			);
 			path = "Navigation Bar";
 			sourceTree = "<group>";
