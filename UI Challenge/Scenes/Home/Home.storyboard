@@ -15,9 +15,26 @@
                     <view key="view" contentMode="scaleToFill" id="qYT-id-QGh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZJ-23-bJY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="uiS-1Z-e1n"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="AHW-e2-hak"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AHW-e2-hak" firstAttribute="trailing" secondItem="hZJ-23-bJY" secondAttribute="trailing" id="bLl-Ci-agV"/>
+                            <constraint firstItem="hZJ-23-bJY" firstAttribute="leading" secondItem="AHW-e2-hak" secondAttribute="leading" id="gcs-gg-wSz"/>
+                            <constraint firstItem="hZJ-23-bJY" firstAttribute="top" secondItem="AHW-e2-hak" secondAttribute="top" id="n0z-9E-fK1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="navigationBarView" destination="hZJ-23-bJY" id="a0w-F3-A3F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptS-T2-sVE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -27,6 +44,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
