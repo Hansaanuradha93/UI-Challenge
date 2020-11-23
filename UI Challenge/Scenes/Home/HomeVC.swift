@@ -26,6 +26,15 @@ class HomeVC: UIViewController {
     // MARK: View Controller
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+}
+
+
+// MARK: Private Methods
+private extension HomeVC {
+    
+    func setupUI() {
         navigationController?.navigationBar.isHidden = true
         navigationBarView.addSubview(customNavigationBarView)
     }
