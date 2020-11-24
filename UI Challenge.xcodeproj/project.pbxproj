@@ -16,6 +16,7 @@
 		47015EE7256BAF0700870A44 /* UCNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47015EE6256BAF0700870A44 /* UCNavigationBarView.xib */; };
 		47015EEA256BAF2D00870A44 /* UCNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47015EE9256BAF2D00870A44 /* UCNavigationBarView.swift */; };
 		4738EEC6256D50AE00532B91 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738EEC5256D50AE00532B91 /* UIView+Ext.swift */; };
+		4738EECB256D652500532B91 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738EECA256D652500532B91 /* CategoryHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		47015EE6256BAF0700870A44 /* UCNavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UCNavigationBarView.xib; sourceTree = "<group>"; };
 		47015EE9256BAF2D00870A44 /* UCNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCNavigationBarView.swift; sourceTree = "<group>"; };
 		4738EEC5256D50AE00532B91 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		4738EECA256D652500532B91 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		47015EA8256B8EBC00870A44 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4738EEC9256D64F300532B91 /* Cells */,
 				47015EAF256B902900870A44 /* HomeVC.swift */,
 				47015EAC256B8FFC00870A44 /* Home.storyboard */,
 			);
@@ -122,6 +125,14 @@
 				4738EEC5256D50AE00532B91 /* UIView+Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4738EEC9256D64F300532B91 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4738EECA256D652500532B91 /* CategoryHeaderView.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47015EB0256B902900870A44 /* HomeVC.swift in Sources */,
+				4738EECB256D652500532B91 /* CategoryHeaderView.swift in Sources */,
 				47015EEA256BAF2D00870A44 /* UCNavigationBarView.swift in Sources */,
 				4738EEC6256D50AE00532B91 /* UIView+Ext.swift in Sources */,
 				47015E8F256B8BDC00870A44 /* AppDelegate.swift in Sources */,

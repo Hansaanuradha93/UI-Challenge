@@ -26,6 +26,7 @@ class HomeVC: UIViewController {
     
     private static let cellIdentifier = "Cell"
     private static let categoryIdentifier = "categoryIdentifier"
+    private static let headerIdentifier = "headerIdentifier"
     
     
     // MARK: View Controller
@@ -38,6 +39,11 @@ class HomeVC: UIViewController {
 
 // MARK: - UICollectionViewDataSource
 extension HomeVC: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeVC.headerIdentifier, for: indexPath) as! CategoryHeaderView
+        return header
+    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
@@ -73,7 +79,6 @@ private extension HomeVC {
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets.trailing = 2
-                item.contentInsets.bottom = 16
                 
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
@@ -101,8 +106,6 @@ private extension HomeVC {
                 
                 return section
             }
-            
-            
         }
         
         return layout
@@ -116,7 +119,9 @@ private extension HomeVC {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: HomeVC.createLayout())
         collectionView.backgroundColor = .systemBackground
         collectionView.dataSource = self
+        
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: HomeVC.cellIdentifier)
+        collectionView.register(CategoryHeaderView.self, forSupplementaryViewOfKind: HomeVC.categoryIdentifier, withReuseIdentifier: HomeVC.headerIdentifier)
         
         view.addSubview(collectionView)
         collectionView.anchor(top: navigationBarView.bottomAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
