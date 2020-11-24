@@ -22,10 +22,9 @@ class HomeVC: UIViewController {
         return view
     }()
     
-    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    private var collectionView: UICollectionView!
     
     private let cellIdentifier = "Cell"
-    
     
     
     // MARK: View Controller
@@ -40,8 +39,9 @@ class HomeVC: UIViewController {
 extension HomeVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 10
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
@@ -54,15 +54,33 @@ extension HomeVC: UICollectionViewDataSource {
 // MARK: Private Methods
 private extension HomeVC {
     
+    static func createLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            item.contentInsets.trailing = 16
+            item.contentInsets.bottom = 16
+            
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200))
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            
+            let section = NSCollectionLayoutSection(group: group)
+            return section
+        }
+    }
+    
+    
     func setupUI() {
         navigationController?.navigationBar.isHidden = true
         navigationBarView.addSubview(customNavigationBarView)
-        view.addSubview(collectionView)
         
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: HomeVC.createLayout())
         collectionView.backgroundColor = .systemBackground
-        collectionView.anchor(top: navigationBarView.bottomAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
         collectionView.dataSource = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
+        
+        view.addSubview(collectionView)
+        collectionView.anchor(top: navigationBarView.bottomAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
     }
 }
 
