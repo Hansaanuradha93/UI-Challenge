@@ -24,7 +24,8 @@ class HomeVC: UIViewController {
     
     private var collectionView: UICollectionView!
     
-    private let cellIdentifier = "Cell"
+    private static let cellIdentifier = "Cell"
+    private static let categoryIdentifier = "categoryIdentifier"
     
     
     // MARK: View Controller
@@ -38,13 +39,24 @@ class HomeVC: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension HomeVC: UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        switch section {
+        case 0:
+            return 3
+        case 1:
+            return 8
+        default:
+            return 0
+        }
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeVC.cellIdentifier, for: indexPath)
         cell.backgroundColor = .systemRed
         return cell
     }
@@ -55,18 +67,45 @@ extension HomeVC: UICollectionViewDataSource {
 private extension HomeVC {
     
     static func createLayout() -> UICollectionViewCompositionalLayout {
-        return UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets.trailing = 16
-            item.contentInsets.bottom = 16
+        let layout = UICollectionViewCompositionalLayout { (sectionNumber, env) -> NSCollectionLayoutSection? in
             
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200))
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+            if sectionNumber == 0 {
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                item.contentInsets.trailing = 2
+                item.contentInsets.bottom = 16
+                
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .paging
+                
+                return section
+            } else {
+                
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.25), heightDimension: .absolute(150))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                item.contentInsets.trailing = 16
+                item.contentInsets.bottom = 16
+                
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(500))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets.leading = 16
+                
+                section.boundarySupplementaryItems = [
+                    .init(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50)), elementKind: categoryIdentifier, alignment: .topLeading)
+                ]
+                
+                return section
+            }
             
-            let section = NSCollectionLayoutSection(group: group)
-            return section
+            
         }
+        
+        return layout
     }
     
     
@@ -77,7 +116,7 @@ private extension HomeVC {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: HomeVC.createLayout())
         collectionView.backgroundColor = .systemBackground
         collectionView.dataSource = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: HomeVC.cellIdentifier)
         
         view.addSubview(collectionView)
         collectionView.anchor(top: navigationBarView.bottomAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
