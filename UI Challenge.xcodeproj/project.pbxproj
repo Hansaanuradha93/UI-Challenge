@@ -15,6 +15,7 @@
 		47015EB0256B902900870A44 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47015EAF256B902900870A44 /* HomeVC.swift */; };
 		47015EE7256BAF0700870A44 /* UCNavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 47015EE6256BAF0700870A44 /* UCNavigationBarView.xib */; };
 		47015EEA256BAF2D00870A44 /* UCNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47015EE9256BAF2D00870A44 /* UCNavigationBarView.swift */; };
+		4738EEC6256D50AE00532B91 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738EEC5256D50AE00532B91 /* UIView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		47015EAF256B902900870A44 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		47015EE6256BAF0700870A44 /* UCNavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UCNavigationBarView.xib; sourceTree = "<group>"; };
 		47015EE9256BAF2D00870A44 /* UCNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCNavigationBarView.swift; sourceTree = "<group>"; };
+		4738EEC5256D50AE00532B91 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				47015EA7256B8EA600870A44 /* Custom Views */,
 				47015EA6256B8E8D00870A44 /* Scenes */,
+				4738EEC4256D508C00532B91 /* Extensions */,
 				47015EA4256B8E7500870A44 /* Support Files */,
 			);
 			path = "UI Challenge";
@@ -111,6 +114,14 @@
 				47015EE6256BAF0700870A44 /* UCNavigationBarView.xib */,
 			);
 			path = "Navigation Bar";
+			sourceTree = "<group>";
+		};
+		4738EEC4256D508C00532B91 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4738EEC5256D50AE00532B91 /* UIView+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +197,7 @@
 			files = (
 				47015EB0256B902900870A44 /* HomeVC.swift in Sources */,
 				47015EEA256BAF2D00870A44 /* UCNavigationBarView.swift in Sources */,
+				4738EEC6256D50AE00532B91 /* UIView+Ext.swift in Sources */,
 				47015E8F256B8BDC00870A44 /* AppDelegate.swift in Sources */,
 				47015E91256B8BDC00870A44 /* SceneDelegate.swift in Sources */,
 			);
