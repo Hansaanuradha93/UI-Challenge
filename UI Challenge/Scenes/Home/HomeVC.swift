@@ -46,7 +46,7 @@ extension HomeVC: UICollectionViewDataSource {
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 3
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -57,6 +57,8 @@ extension HomeVC: UICollectionViewDataSource {
             return 8
         case 2:
             return 3
+        case 3:
+            return 6
         default:
             return 0
         }
@@ -108,19 +110,34 @@ private extension HomeVC {
                 ]
                 
                 return section
-            } else {
+            } else if sectionNumber == 2 {
                 
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
                 let item = NSCollectionLayoutItem(layoutSize: itemSize)
                 item.contentInsets.trailing = 32
+                item.contentInsets.bottom = 16
                 
                 let gruopSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.8), heightDimension: .absolute(115))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: gruopSize, subitems: [item])
                 
                 let section = NSCollectionLayoutSection(group: group)
-                section.contentInsets.leading = 16
+                section.contentInsets = .init(top: 16, leading: 16, bottom: 0, trailing: 0)
                 section.orthogonalScrollingBehavior = .continuous
                 
+                return section
+            } else {
+                
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(250))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                item.contentInsets.trailing = 16
+                item.contentInsets.bottom = 16
+                
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(600))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.contentInsets = .init(top: 16, leading: 16, bottom: 0, trailing: 0)
+
                 return section
             }
         }
