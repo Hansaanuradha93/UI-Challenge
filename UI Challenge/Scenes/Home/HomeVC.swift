@@ -37,8 +37,8 @@ class HomeVC: UIViewController {
 }
 
 
-// MARK: - UICollectionViewDataSource
-extension HomeVC: UICollectionViewDataSource {
+// MARK: - UICollectionViewDataSource && UICollectionViewDelegate
+extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeVC.headerIdentifier, for: indexPath) as! CategoryHeaderView
@@ -69,6 +69,28 @@ extension HomeVC: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeVC.cellIdentifier, for: indexPath)
         cell.backgroundColor = .systemRed
         return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = UIViewController()
+        var color = UIColor()
+        
+        switch indexPath.section {
+        case 0:
+            color = .systemBlue
+        case 1:
+            color = .systemPurple
+        case 2:
+            color = .systemPink
+        case 3:
+            color = .systemTeal
+        default:
+            color = .systemBackground
+        }
+        
+        controller.view.backgroundColor = color
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
@@ -153,6 +175,7 @@ private extension HomeVC {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: HomeVC.createLayout())
         collectionView.backgroundColor = .systemBackground
         collectionView.dataSource = self
+        collectionView.delegate = self
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: HomeVC.cellIdentifier)
         collectionView.register(CategoryHeaderView.self, forSupplementaryViewOfKind: HomeVC.categoryIdentifier, withReuseIdentifier: HomeVC.headerIdentifier)
