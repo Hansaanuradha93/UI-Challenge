@@ -18,9 +18,14 @@ class HomeVC: UIViewController {
     }
     
     lazy var customNavigationBarView: UCNavigationBarView = {
-        let view = UCNavigationBarView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.navigationBarView.frame.size.height), title: "Sign Up", delegate: self)
+        let view = UCNavigationBarView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.navigationBarView.frame.size.height), title: "Life Styles", delegate: self)
         return view
     }()
+    
+    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    
+    private let cellIdentifier = "Cell"
+    
     
     
     // MARK: View Controller
@@ -31,12 +36,33 @@ class HomeVC: UIViewController {
 }
 
 
+// MARK: - UICollectionViewDataSource
+extension HomeVC: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
+        cell.backgroundColor = .systemRed
+        return cell
+    }
+}
+
+
 // MARK: Private Methods
 private extension HomeVC {
     
     func setupUI() {
         navigationController?.navigationBar.isHidden = true
         navigationBarView.addSubview(customNavigationBarView)
+        view.addSubview(collectionView)
+        
+        collectionView.backgroundColor = .systemBackground
+        collectionView.anchor(top: navigationBarView.bottomAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
+        collectionView.dataSource = self
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
     }
 }
 
