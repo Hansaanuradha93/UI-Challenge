@@ -25,6 +25,8 @@
 		470DCDE6256EA6A600D3D1E4 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDE5256EA6A600D3D1E4 /* SearchVC.swift */; };
 		470DCDF1256EB42B00D3D1E4 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDF0256EB42B00D3D1E4 /* Section.swift */; };
 		470DCDF5256EB43E00D3D1E4 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDF4256EB43E00D3D1E4 /* App.swift */; };
+		470DCDF9256EB72F00D3D1E4 /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDF8256EB72F00D3D1E4 /* SelfConfiguringCell.swift */; };
+		470DCDFE256EB7C300D3D1E4 /* FeaturedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDFD256EB7C300D3D1E4 /* FeaturedCell.swift */; };
 		4738EEC6256D50AE00532B91 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738EEC5256D50AE00532B91 /* UIView+Ext.swift */; };
 		4738EECB256D652500532B91 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738EECA256D652500532B91 /* CategoryHeaderView.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		470DCDE5256EA6A600D3D1E4 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		470DCDF0256EB42B00D3D1E4 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		470DCDF4256EB43E00D3D1E4 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		470DCDF8256EB72F00D3D1E4 /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
+		470DCDFD256EB7C300D3D1E4 /* FeaturedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCell.swift; sourceTree = "<group>"; };
 		4738EEC5256D50AE00532B91 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		4738EECA256D652500532B91 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +92,7 @@
 				47015EA7256B8EA600870A44 /* Custom Views */,
 				47015EA6256B8E8D00870A44 /* Scenes */,
 				4738EEC4256D508C00532B91 /* Extensions */,
+				470DCDF7256EB71700D3D1E4 /* Protocols */,
 				470DCDB5256EA22600D3D1E4 /* Helper */,
 				470DCDDA256EA3F800D3D1E4 /* Constants */,
 				47015EA4256B8E7500870A44 /* Support Files */,
@@ -183,6 +188,7 @@
 		470DCDE8256EA76800D3D1E4 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				470DCDFC256EB7AE00D3D1E4 /* Cells */,
 				470DCDAD256E9FDB00D3D1E4 /* AppStoreVC.swift */,
 			);
 			path = Apps;
@@ -219,6 +225,22 @@
 				470DCDF4256EB43E00D3D1E4 /* App.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		470DCDF7256EB71700D3D1E4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				470DCDF8256EB72F00D3D1E4 /* SelfConfiguringCell.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		470DCDFC256EB7AE00D3D1E4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				470DCDFD256EB7C300D3D1E4 /* FeaturedCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		4738EEC4256D508C00532B91 /* Extensions */ = {
@@ -318,12 +340,14 @@
 				470DCDB7256EA23E00D3D1E4 /* Bundle-Decodable.swift in Sources */,
 				4738EEC6256D50AE00532B91 /* UIView+Ext.swift in Sources */,
 				470DCDDC256EA40600D3D1E4 /* Constants.swift in Sources */,
+				470DCDF9256EB72F00D3D1E4 /* SelfConfiguringCell.swift in Sources */,
 				470DCDE3256EA65900D3D1E4 /* ArcadeVC.swift in Sources */,
 				47015E8F256B8BDC00870A44 /* AppDelegate.swift in Sources */,
 				470DCDAE256E9FDB00D3D1E4 /* AppStoreVC.swift in Sources */,
 				470DCDE6256EA6A600D3D1E4 /* SearchVC.swift in Sources */,
 				470DCDD8256EA34800D3D1E4 /* AppStoreTabBar.swift in Sources */,
 				47015E91256B8BDC00870A44 /* SceneDelegate.swift in Sources */,
+				470DCDFE256EB7C300D3D1E4 /* FeaturedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
