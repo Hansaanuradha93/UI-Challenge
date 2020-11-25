@@ -18,6 +18,11 @@
 		470DCDAE256E9FDB00D3D1E4 /* AppStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDAD256E9FDB00D3D1E4 /* AppStoreVC.swift */; };
 		470DCDB3256EA1D200D3D1E4 /* appstore.json in Resources */ = {isa = PBXBuildFile; fileRef = 470DCDB2256EA1D200D3D1E4 /* appstore.json */; };
 		470DCDB7256EA23E00D3D1E4 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDB6256EA23E00D3D1E4 /* Bundle-Decodable.swift */; };
+		470DCDD8256EA34800D3D1E4 /* AppStoreTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDD7256EA34800D3D1E4 /* AppStoreTabBar.swift */; };
+		470DCDDC256EA40600D3D1E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDDB256EA40600D3D1E4 /* Constants.swift */; };
+		470DCDE0256EA60F00D3D1E4 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDDF256EA60F00D3D1E4 /* GameVC.swift */; };
+		470DCDE3256EA65900D3D1E4 /* ArchadeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDE2256EA65900D3D1E4 /* ArchadeVC.swift */; };
+		470DCDE6256EA6A600D3D1E4 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDE5256EA6A600D3D1E4 /* SearchVC.swift */; };
 		4738EEC6256D50AE00532B91 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738EEC5256D50AE00532B91 /* UIView+Ext.swift */; };
 		4738EECB256D652500532B91 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738EECA256D652500532B91 /* CategoryHeaderView.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +41,11 @@
 		470DCDAD256E9FDB00D3D1E4 /* AppStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreVC.swift; sourceTree = "<group>"; };
 		470DCDB2256EA1D200D3D1E4 /* appstore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appstore.json; sourceTree = "<group>"; };
 		470DCDB6256EA23E00D3D1E4 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		470DCDD7256EA34800D3D1E4 /* AppStoreTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTabBar.swift; sourceTree = "<group>"; };
+		470DCDDB256EA40600D3D1E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		470DCDDF256EA60F00D3D1E4 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		470DCDE2256EA65900D3D1E4 /* ArchadeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchadeVC.swift; sourceTree = "<group>"; };
+		470DCDE5256EA6A600D3D1E4 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		4738EEC5256D50AE00532B91 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		4738EECA256D652500532B91 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,10 +80,12 @@
 		47015E8D256B8BDC00870A44 /* UI Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				470DCDBA256EA2D900D3D1E4 /* Tab Bar */,
 				47015EA7256B8EA600870A44 /* Custom Views */,
 				47015EA6256B8E8D00870A44 /* Scenes */,
 				4738EEC4256D508C00532B91 /* Extensions */,
 				470DCDB5256EA22600D3D1E4 /* Helper */,
+				470DCDDA256EA3F800D3D1E4 /* Constants */,
 				47015EA4256B8E7500870A44 /* Support Files */,
 			);
 			path = "UI Challenge";
@@ -131,7 +143,10 @@
 		470DCDAC256E9FBE00D3D1E4 /* App Store */ = {
 			isa = PBXGroup;
 			children = (
-				470DCDAD256E9FDB00D3D1E4 /* AppStoreVC.swift */,
+				470DCDE8256EA76800D3D1E4 /* Apps */,
+				470DCDE9256EA78400D3D1E4 /* Games */,
+				470DCDEB256EA79500D3D1E4 /* Search */,
+				470DCDEA256EA78F00D3D1E4 /* Archade */,
 			);
 			path = "App Store";
 			sourceTree = "<group>";
@@ -142,6 +157,54 @@
 				470DCDB6256EA23E00D3D1E4 /* Bundle-Decodable.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		470DCDBA256EA2D900D3D1E4 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				470DCDD7256EA34800D3D1E4 /* AppStoreTabBar.swift */,
+			);
+			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		470DCDDA256EA3F800D3D1E4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				470DCDDB256EA40600D3D1E4 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		470DCDE8256EA76800D3D1E4 /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				470DCDAD256E9FDB00D3D1E4 /* AppStoreVC.swift */,
+			);
+			path = Apps;
+			sourceTree = "<group>";
+		};
+		470DCDE9256EA78400D3D1E4 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				470DCDDF256EA60F00D3D1E4 /* GameVC.swift */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		470DCDEA256EA78F00D3D1E4 /* Archade */ = {
+			isa = PBXGroup;
+			children = (
+				470DCDE2256EA65900D3D1E4 /* ArchadeVC.swift */,
+			);
+			path = Archade;
+			sourceTree = "<group>";
+		};
+		470DCDEB256EA79500D3D1E4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				470DCDE5256EA6A600D3D1E4 /* SearchVC.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		4738EEC4256D508C00532B91 /* Extensions */ = {
@@ -232,13 +295,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				470DCDE0256EA60F00D3D1E4 /* GameVC.swift in Sources */,
 				47015EB0256B902900870A44 /* HomeVC.swift in Sources */,
 				4738EECB256D652500532B91 /* CategoryHeaderView.swift in Sources */,
 				47015EEA256BAF2D00870A44 /* UCNavigationBarView.swift in Sources */,
 				470DCDB7256EA23E00D3D1E4 /* Bundle-Decodable.swift in Sources */,
 				4738EEC6256D50AE00532B91 /* UIView+Ext.swift in Sources */,
+				470DCDDC256EA40600D3D1E4 /* Constants.swift in Sources */,
+				470DCDE3256EA65900D3D1E4 /* ArchadeVC.swift in Sources */,
 				47015E8F256B8BDC00870A44 /* AppDelegate.swift in Sources */,
 				470DCDAE256E9FDB00D3D1E4 /* AppStoreVC.swift in Sources */,
+				470DCDE6256EA6A600D3D1E4 /* SearchVC.swift in Sources */,
+				470DCDD8256EA34800D3D1E4 /* AppStoreTabBar.swift in Sources */,
 				47015E91256B8BDC00870A44 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
