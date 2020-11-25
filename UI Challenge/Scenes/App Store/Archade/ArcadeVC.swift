@@ -1,11 +1,11 @@
 import UIKit
 
-class SearchVC: UIViewController {
+class ArcadeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Search"
+        title = "Arcade"
     }
 }

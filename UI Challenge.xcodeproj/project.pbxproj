@@ -21,7 +21,7 @@
 		470DCDD8256EA34800D3D1E4 /* AppStoreTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDD7256EA34800D3D1E4 /* AppStoreTabBar.swift */; };
 		470DCDDC256EA40600D3D1E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDDB256EA40600D3D1E4 /* Constants.swift */; };
 		470DCDE0256EA60F00D3D1E4 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDDF256EA60F00D3D1E4 /* GameVC.swift */; };
-		470DCDE3256EA65900D3D1E4 /* ArchadeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDE2256EA65900D3D1E4 /* ArchadeVC.swift */; };
+		470DCDE3256EA65900D3D1E4 /* ArcadeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDE2256EA65900D3D1E4 /* ArcadeVC.swift */; };
 		470DCDE6256EA6A600D3D1E4 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470DCDE5256EA6A600D3D1E4 /* SearchVC.swift */; };
 		4738EEC6256D50AE00532B91 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738EEC5256D50AE00532B91 /* UIView+Ext.swift */; };
 		4738EECB256D652500532B91 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738EECA256D652500532B91 /* CategoryHeaderView.swift */; };
@@ -44,7 +44,7 @@
 		470DCDD7256EA34800D3D1E4 /* AppStoreTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreTabBar.swift; sourceTree = "<group>"; };
 		470DCDDB256EA40600D3D1E4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		470DCDDF256EA60F00D3D1E4 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
-		470DCDE2256EA65900D3D1E4 /* ArchadeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchadeVC.swift; sourceTree = "<group>"; };
+		470DCDE2256EA65900D3D1E4 /* ArcadeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeVC.swift; sourceTree = "<group>"; };
 		470DCDE5256EA6A600D3D1E4 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		4738EEC5256D50AE00532B91 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		4738EECA256D652500532B91 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
@@ -80,7 +80,6 @@
 		47015E8D256B8BDC00870A44 /* UI Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				470DCDBA256EA2D900D3D1E4 /* Tab Bar */,
 				47015EA7256B8EA600870A44 /* Custom Views */,
 				47015EA6256B8E8D00870A44 /* Scenes */,
 				4738EEC4256D508C00532B91 /* Extensions */,
@@ -116,6 +115,7 @@
 		47015EA7256B8EA600870A44 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				470DCDBA256EA2D900D3D1E4 /* Tab Bar */,
 				47015EDE256BAE0100870A44 /* Navigation Bar */,
 			);
 			path = "Custom Views";
@@ -194,7 +194,7 @@
 		470DCDEA256EA78F00D3D1E4 /* Archade */ = {
 			isa = PBXGroup;
 			children = (
-				470DCDE2256EA65900D3D1E4 /* ArchadeVC.swift */,
+				470DCDE2256EA65900D3D1E4 /* ArcadeVC.swift */,
 			);
 			path = Archade;
 			sourceTree = "<group>";
@@ -302,7 +302,7 @@
 				470DCDB7256EA23E00D3D1E4 /* Bundle-Decodable.swift in Sources */,
 				4738EEC6256D50AE00532B91 /* UIView+Ext.swift in Sources */,
 				470DCDDC256EA40600D3D1E4 /* Constants.swift in Sources */,
-				470DCDE3256EA65900D3D1E4 /* ArchadeVC.swift in Sources */,
+				470DCDE3256EA65900D3D1E4 /* ArcadeVC.swift in Sources */,
 				47015E8F256B8BDC00870A44 /* AppDelegate.swift in Sources */,
 				470DCDAE256E9FDB00D3D1E4 /* AppStoreVC.swift in Sources */,
 				470DCDE6256EA6A600D3D1E4 /* SearchVC.swift in Sources */,

@@ -27,10 +27,10 @@ fileprivate extension AppStoreTabBar {
     }
     
     
-    func createArchadeNC() -> UINavigationController {
-        let archadeVC = ArchadeVC()
-        archadeVC.tabBarItem = UITabBarItem(title: "", image: Asserts.archade, selectedImage: Asserts.archadeFill)
-        return UINavigationController(rootViewController: archadeVC)
+    func createArcadeNC() -> UINavigationController {
+        let arcadeVC = ArcadeVC()
+        arcadeVC.tabBarItem = UITabBarItem(title: "", image: Asserts.archade, selectedImage: Asserts.archadeFill)
+        return UINavigationController(rootViewController: arcadeVC)
     }
     
     
@@ -44,7 +44,7 @@ fileprivate extension AppStoreTabBar {
     func setupUI() {
         UITabBar.appearance().tintColor = .black
         tabBar.barTintColor = .white
-        viewControllers = [createAppStoreNC(), createGamesNC(), createArchadeNC(), createSearchNC()]
+        viewControllers = [createAppStoreNC(), createGamesNC(), createArcadeNC(), createSearchNC()]
         
         let traits = [UIFontDescriptor.TraitKey.weight: UIFont.Weight.medium]
         var descriptor = UIFontDescriptor(fontAttributes: [UIFontDescriptor.AttributeName.family: Fonts.avenirNext])
