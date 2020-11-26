@@ -12,6 +12,8 @@ struct Asserts {
     static let archadeFill = UIImage(systemName: "dollarsign.circle.fill")!
 
     static let search = UIImage(systemName: "magnifyingglass")!
+    
+    static let arrowDown = UIImage(systemName: "icloud.and.arrow.down")!
 }
 
 struct Fonts {
