@@ -30,6 +30,7 @@
 		4738EEC6256D50AE00532B91 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738EEC5256D50AE00532B91 /* UIView+Ext.swift */; };
 		4738EECB256D652500532B91 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738EECA256D652500532B91 /* CategoryHeaderView.swift */; };
 		47A28385256FE54D0050389C /* MediumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A28384256FE54D0050389C /* MediumTableViewCell.swift */; };
+		47A28389256FFA000050389C /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A28388256FFA000050389C /* SectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		4738EEC5256D50AE00532B91 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		4738EECA256D652500532B91 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
 		47A28384256FE54D0050389C /* MediumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumTableViewCell.swift; sourceTree = "<group>"; };
+		47A28388256FFA000050389C /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 		470DCDE8256EA76800D3D1E4 /* Apps */ = {
 			isa = PBXGroup;
 			children = (
+				47A28387256FF9CD0050389C /* Headers */,
 				470DCDFC256EB7AE00D3D1E4 /* Cells */,
 				470DCDAD256E9FDB00D3D1E4 /* AppStoreVC.swift */,
 			);
@@ -260,6 +263,14 @@
 				4738EECA256D652500532B91 /* CategoryHeaderView.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		47A28387256FF9CD0050389C /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				47A28388256FFA000050389C /* SectionHeaderView.swift */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +354,7 @@
 				470DCDB7256EA23E00D3D1E4 /* Bundle-Decodable.swift in Sources */,
 				4738EEC6256D50AE00532B91 /* UIView+Ext.swift in Sources */,
 				470DCDDC256EA40600D3D1E4 /* Constants.swift in Sources */,
+				47A28389256FFA000050389C /* SectionHeaderView.swift in Sources */,
 				470DCDF9256EB72F00D3D1E4 /* SelfConfiguringCell.swift in Sources */,
 				470DCDE3256EA65900D3D1E4 /* ArcadeVC.swift in Sources */,
 				47015E8F256B8BDC00870A44 /* AppDelegate.swift in Sources */,
