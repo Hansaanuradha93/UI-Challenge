@@ -24,14 +24,18 @@ class MediumTableViewCell: UICollectionViewCell, SelfConfiguringCell {
         
         buyButton.setImage(Asserts.arrowDown, for: .normal)
         
+        imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        buyButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        
         let innerStackView = UIStackView(arrangedSubviews: [nameLabel, subtitileLabel])
         innerStackView.axis = .vertical
         
         let outerStackView = UIStackView(arrangedSubviews: [imageView, innerStackView, buyButton])
+        outerStackView.alignment = .center
+        outerStackView.spacing = 10
         
         contentView.addSubview(outerStackView)
-        outerStackView.fillSuperview()
-
+        outerStackView.anchor(top: contentView.topAnchor, leading: contentView.leadingAnchor, bottom: nil, trailing: contentView.trailingAnchor)
     }
     
     
