@@ -29,4 +29,10 @@ class SectionHeaderView: UICollectionReusableView {
     }
     
     required init?(coder: NSCoder) { fatalError() }
+    
+    
+    func configure(with section: Section) {
+        titleLabel.text = section.title
+        subtitleLabel.text = section.subtitle
+    }
 }

@@ -65,6 +65,12 @@ extension AppStoreVC {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPagingCentered
         
+        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(80))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        
+        section.boundarySupplementaryItems = [sectionHeader]
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0)
+        
         return section
     }
     
@@ -88,6 +94,21 @@ extension AppStoreVC {
             default:
                 return self.configure(FeaturedCell.self, with: app, for: indexPath)
             }
+        }
+        
+        dataSource?.supplementaryViewProvider = { [weak self] collectionView, kind, indexPath in
+            guard let sectionHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeaderView.reuseIdentifier, for: indexPath) as? SectionHeaderView else {
+                return nil
+            }
+            
+            guard let firstApp = self?.dataSource?.itemIdentifier(for: indexPath) else { return nil }
+            
+            guard let section = self?.dataSource?.snapshot().sectionIdentifier(containingItem: firstApp) else { return nil }
+            
+            if section.title.isEmpty { return nil }
+            
+            sectionHeaderView.configure(with: section)
+            return sectionHeaderView
         }
     }
     
@@ -113,6 +134,7 @@ extension AppStoreVC {
         
         collectionView.register(FeaturedCell.self, forCellWithReuseIdentifier: FeaturedCell.reuseIdentifier)
         collectionView.register(MediumTableViewCell.self, forCellWithReuseIdentifier: MediumTableViewCell.reuseIdentifier)
+        collectionView.register(SectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeaderView.reuseIdentifier)
         
         createDataSource()
         reloadData()
