@@ -25,6 +25,8 @@ extension AppStoreVC {
             let section = self.sections[sectionIndex]
             
             switch section.type {
+            case "mediumTable":
+                return self.createMediumTableSection(using: section)
             default:
                 return self.createFeaturedSection(using: section)
             }
@@ -52,6 +54,20 @@ extension AppStoreVC {
         return section
     }
     
+    func createMediumTableSection(using section: Section) -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.33))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .fractionalWidth(0.55))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .groupPagingCentered
+        
+        return section
+    }
+    
     func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, App>()
         snapshot.appendSections(sections)
@@ -67,6 +83,8 @@ extension AppStoreVC {
     func createDataSource() {
         dataSource = UICollectionViewDiffableDataSource<Section, App>(collectionView: collectionView) { collectionView, indexPath, app in
             switch self.sections[indexPath.section].type {
+            case "mediumTable":
+                return self.configure(MediumTableViewCell.self, with: app, for: indexPath)
             default:
                 return self.configure(FeaturedCell.self, with: app, for: indexPath)
             }
@@ -94,6 +112,7 @@ extension AppStoreVC {
         view.addSubview(collectionView)
         
         collectionView.register(FeaturedCell.self, forCellWithReuseIdentifier: FeaturedCell.reuseIdentifier)
+        collectionView.register(MediumTableViewCell.self, forCellWithReuseIdentifier: MediumTableViewCell.reuseIdentifier)
         
         createDataSource()
         reloadData()
