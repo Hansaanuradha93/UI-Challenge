@@ -31,6 +31,7 @@
 		4738EECB256D652500532B91 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4738EECA256D652500532B91 /* CategoryHeaderView.swift */; };
 		47A28385256FE54D0050389C /* MediumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A28384256FE54D0050389C /* MediumTableViewCell.swift */; };
 		47A28389256FFA000050389C /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A28388256FFA000050389C /* SectionHeaderView.swift */; };
+		47EAD95625716B43006CF7CD /* SmallTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EAD95525716B43006CF7CD /* SmallTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		4738EECA256D652500532B91 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
 		47A28384256FE54D0050389C /* MediumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumTableViewCell.swift; sourceTree = "<group>"; };
 		47A28388256FFA000050389C /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		47EAD95525716B43006CF7CD /* SmallTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallTableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 			children = (
 				470DCDFD256EB7C300D3D1E4 /* FeaturedCell.swift */,
 				47A28384256FE54D0050389C /* MediumTableViewCell.swift */,
+				47EAD95525716B43006CF7CD /* SmallTableCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				47A28389256FFA000050389C /* SectionHeaderView.swift in Sources */,
 				470DCDF9256EB72F00D3D1E4 /* SelfConfiguringCell.swift in Sources */,
 				470DCDE3256EA65900D3D1E4 /* ArcadeVC.swift in Sources */,
+				47EAD95625716B43006CF7CD /* SmallTableCell.swift in Sources */,
 				47015E8F256B8BDC00870A44 /* AppDelegate.swift in Sources */,
 				47A28385256FE54D0050389C /* MediumTableViewCell.swift in Sources */,
 				470DCDAE256E9FDB00D3D1E4 /* AppStoreVC.swift in Sources */,
