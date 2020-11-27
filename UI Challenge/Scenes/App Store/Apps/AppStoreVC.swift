@@ -27,6 +27,8 @@ extension AppStoreVC {
             switch section.type {
             case "mediumTable":
                 return self.createMediumTableSection(using: section)
+            case "smallTable":
+                return self.createSmallTableSection(using: section)
             default:
                 return self.createFeaturedSection(using: section)
             }
@@ -54,6 +56,7 @@ extension AppStoreVC {
         return section
     }
     
+    
     func createMediumTableSection(using section: Section) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.33))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -65,14 +68,40 @@ extension AppStoreVC {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPagingCentered
         
-        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(80))
-        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        let sectionHeader = createSectionHeader()
         
         section.boundarySupplementaryItems = [sectionHeader]
         section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0)
         
         return section
     }
+    
+    
+    func createSmallTableSection(using section: Section) -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.2))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
+      
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .absolute(200))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        
+        let sectionHeader = createSectionHeader()
+        
+        section.boundarySupplementaryItems = [sectionHeader]
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0)
+        
+        return section
+    }
+    
+    
+    func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.93), heightDimension: .estimated(80))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        return sectionHeader
+    }
+    
     
     func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<Section, App>()
@@ -91,6 +120,8 @@ extension AppStoreVC {
             switch self.sections[indexPath.section].type {
             case "mediumTable":
                 return self.configure(MediumTableViewCell.self, with: app, for: indexPath)
+            case "smallTable":
+                return self.configure(SmallTableCell.self, with: app, for: indexPath)
             default:
                 return self.configure(FeaturedCell.self, with: app, for: indexPath)
             }
@@ -135,6 +166,7 @@ extension AppStoreVC {
         collectionView.register(FeaturedCell.self, forCellWithReuseIdentifier: FeaturedCell.reuseIdentifier)
         collectionView.register(MediumTableViewCell.self, forCellWithReuseIdentifier: MediumTableViewCell.reuseIdentifier)
         collectionView.register(SectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeaderView.reuseIdentifier)
+        collectionView.register(SmallTableCell.self, forCellWithReuseIdentifier: SmallTableCell.reuseIdentifier)
         
         createDataSource()
         reloadData()
