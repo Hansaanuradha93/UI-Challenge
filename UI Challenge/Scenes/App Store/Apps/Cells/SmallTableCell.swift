@@ -15,8 +15,11 @@ class SmallTableCell: UICollectionViewCell, SelfConfiguringCell {
         
         imageView.layer.cornerRadius = 15
         imageView.clipsToBounds = true
+        imageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         
-        let stackView = UIStackView(arrangedSubviews: [nameLabel, imageView])
+        let stackView = UIStackView(arrangedSubviews: [imageView, nameLabel])
+        stackView.alignment = .center
+        stackView.spacing = 20
 
         contentView.addSubview(stackView)
         stackView.fillSuperview()
